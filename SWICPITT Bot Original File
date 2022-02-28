@@ -1,0 +1,56 @@
+const express = require("express");
+const app = express();
+
+app.listen(3000, () => {
+  console.log("Project is running!");
+})
+
+app.get("/", (req, res) => {
+  res.send("balls in yo jaws");
+})
+
+const Discord = require("discord.js");
+const client = new Discord.Client({intents: ["GUILDS", "GUILD_MESSAGES"]});
+
+client.on("message", message => {
+  if(message.content === "eping") {
+    message.channel.send("pong");
+}
+})
+
+client.on("message", message => {
+  if(message.content === "esay HWTA") {
+    message.channel.send("hey tsukki");
+}
+})
+
+client.on("message", message => {
+  if(message.content === "ehelp") {
+    message.channel.send("For the list of commands go here: https://docs.google.com/document/d/1J_l4kwtUImS8fNK8fhSVm7xbUf66qkmuNek053I99So");
+}
+})
+
+client.on("message", message => {
+  if(message.content === "eshit") {
+    message.channel.send("Seriously, you were too curious on what this command does? Come on man.");
+}
+})
+
+client.on("message", message => {
+  if(message.content === "gsc!help") {
+    message.channel.send("This command is under construction. If this is still saying this message, please contact thenibbleof1887#3553 (Bot Developer).");
+}
+})
+
+client.on("message", message => {
+  if(message.content === "esay huitzilopochtli") {
+    message.channel.send("Manuel has the technology to build an audit logs channel while I have the technology to build a Discord bot dedicated to a server! /j");
+}
+})
+
+client.on("message", message => {
+  if(message.content === "esay") {
+    message.channel.send("Try running the command again, but this time actually use one of the triggers");
+}
+})
+client.login(process.env.token)
